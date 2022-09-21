@@ -9,8 +9,43 @@
 <div class="container body-content">
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
+    <th:block th:fragment="job-list">
+
+        <div class="alert alert-info" style="padding:.75rem">
+            <p><strong>Search Results: </strong> <span class="badge" th:text="${jobs.size()}"></span></p>
+        </div>
+
 
     <!-- TODO #1 - Use a loop to display job results in a table. -->
+    <table th:each="job : ${jobs}" class="table table-hover job-listing">
+        <tr>
+            <td>ID</td>
+            <td th:text="${job.getId()}"></td>
+        </tr>
+        <tr>
+            <td>Name</td>
+            <td th:text="${job.getName()}"></td>
+        </tr>
+        <tr>
+            <td>Employer</td>
+            <td th:text="${job.getEmployer()}"></td>
+        </tr>
+        <tr>
+            <td>Location</td>
+            <td th:text="${job.getLocation()}"></td>
+        </tr>
+        <tr>
+            <td>Position Type</td>
+            <td th:text="${job.getPositionType()}"></td>
+        </tr>
+        <tr>
+            <td>Skill</td>
+            <td th:text="${job.getCoreCompetency()}"></td>
+        </tr>
+
+
+    </table>
+    </th:block>
 
 </div>
 
