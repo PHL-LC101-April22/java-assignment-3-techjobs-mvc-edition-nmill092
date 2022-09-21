@@ -61,8 +61,6 @@ public class ListController {
         }
 
         model.addAttribute("jobs", jobs);
-        model.addAttribute("column", column);
-        model.addAttribute("value", value);
 
         return "list-jobs";
     }
